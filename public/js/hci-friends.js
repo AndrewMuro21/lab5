@@ -14,7 +14,6 @@ function initializePage() {
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
@@ -44,3 +43,9 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
+$("a.name h3").click(function(event){
+	console.log("clicked")
+	event.preventDefault();
+	$(this).text(anagrammedName($(this).text()));
+});
